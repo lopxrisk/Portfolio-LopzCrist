@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Cristian López Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #1b30ec;
+      color: #6ab2ff;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 52px;
+  font-style: italic;
+  font-weight: 600;
+  color: #b8f5f5;
+  text-align: center;
+  text-shadow: 2px 2px 6px rgba(0, 255, 255, 0.3);
+  margin-top: 30px;
+}
+
+
+    .video-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .video-item {
+      background-color: #424040;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 9 9 10px rgba(0,0,0,0.4);
+    }
+
+    iframe {
+      width: 100%;
+      height: 180px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .video-title {
+      margin-top: 10px;
+      font-size: 16px;
+      color: #ffffff;
+    }
+
+    .bio-section {
+      margin-top: 50px;
+      padding-top: 30px;
+      border-top: 1px solid #333;
+    }
+
+    .bio-section h2,
+    .bio-section h3 {
+      color: #dae7e7;
+    }
+
+    .bio-section p {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 16px;
+      line-height: 1.6;
+      text-align: center;
+      color: #ccc;
+    }
+
+    .photo-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+      padding: 10px;
+    }
+
+    .photo-gallery img {
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(255,255,255,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .photo-gallery img:hover {
+      transform: scale(3.05);
+    }
+
+    .contacto-section {
+      margin-top: 60px;
+      padding-top: 40px;
+      border-top: 1px solid #333;
+      text-align: center;
+    }
+
+    .contacto-section h2 {
+      color: #ddebeb;
+    }
+
+    .contacto-section p {
+      color: #ccc;
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+
+    .formulario-contacto {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      max-width: 400px;
+      margin: 0 auto 30px auto;
+    }
+
+    .formulario-contacto input,
+    .formulario-contacto textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: none;
+      outline: none;
+      background-color: #1e1e1e;
+      color: #f5f5f5;
+    }
+
+    .formulario-contacto textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .formulario-contacto button {
+      background-color: #00ffff;
+      color: #000;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .formulario-contacto button:hover {
+      background-color: #00cccc;
+    }
+
+    .boton-whatsapp {
+      display: inline-block;
+      background-color: #25D366;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      margin-bottom: 20px;
+      transition: background-color 0.3s;
+    }
+
+    .boton-whatsapp:hover {
+      background-color: #1ebe5d;
+    }
+
+    .redes-sociales a {
+      margin: 0 20px;
+      text-decoration: none;
+      color: #00ffff;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .redes-sociales a:hover {
+      color: #ffffff;
+    }
+    .redes-inicio {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.redes-inicio a {
+  color: #00bfff; /* Azul claro */
+  margin: 0 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.redes-inicio a:hover {
+  color: #ffffff;
+}
+.photo-gallery img {
+  cursor: pointer;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.9);
+}
+
+.modal img {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 80%;
+}
+
+.modal:target {
+  display: block;
+}
+.video-section,
+.bio-section,
+.contacto-section {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 40px;
+}
+  </style> 
+</head>
+<body>
+  <div class="redes-inicio">
+    <a href="https://www.instagram.com/lopxrisk/" target="_blank">Instagram</a> |
+    <a href="https://www.facebook.com/cristianlooo/" target="_blank">Facebook</a> |
+    <a href="https://www.youtube.com/@sonidosocultosink9438" target="_blank">YouTube</a> |
+    <a href="https://www.linkedin.com/in/cristian-lópez-188bbb1ab/" target="_blank">LinkedIn</a> |
+    <a href="https://www.flickr.com/photos/116687387@N08/" target="_black">Flickr</a>
+  
+  <h1>Portfolio Cristian López</h1>
+  <h2>About Me - Sobre mí</h2>
+  <p>
+    I am a filmmaker and photographer passionate about telling stories through images.
+    In my work, I combine audiovisual language with documentary photography, music, and artistic portraiture.
+    This portfolio captures some of my visual explorations across various projects. | 
+    Soy un filmmaker y fotógrafo apasionado por contar historias a través de la imagen.
+    En mi trabajo combino el lenguaje audiovisual con la fotografía documental, la música y el retrato artístico.
+    Este portafolio recoge parte de mi exploración visual en distintos proyectos.
+  </p>
+
+  <section class="video-section">
+  <div class="video-gallery">
+    <div class="video-item">
+      <iframe src="https://www.youtube.com/embed/-SyMUkw5Iw4" allowfullscreen></iframe>
+      <div class="video-title">Entrevistas en Medellín pt1</div>
+    </div>
+    <div class="video-item">
+      <iframe src="https://www.youtube.com/embed/qRP23ugE6_o" allowfullscreen></iframe>
+      <div class="video-title">Entrevistas en Medellín pt2</div>
+    </div>
+    <div class="video-item">
+      <iframe src="https://www.youtube.com/embed/6GEQLOOJ5sw" allowfullscreen></iframe>
+      <div class="video-title">Composición Musical Rock</div>
+    </div>
+    <div class="video-item">
+      <iframe src="https://www.youtube.com/embed/_h7EKKkaRXA" allowfullscreen></iframe>
+      <div class="video-title">Video Masacre de Mondoñedo</div>
+    </div>
+    <div class="video-item">
+      <iframe src="https://player.vimeo.com/video/273378399" allowfullscreen></iframe>
+      <div class="video-title">Infección sin control</div>
+    </div>
+    <div class="video-item">
+      <iframe src="https://player.vimeo.com/video/424671661" allowfullscreen></iframe>
+      <div class="video-title">Me Levanto y me voy</div>
+  </div>
+</section>  
+
+  <section class="bio-section">
+    <h3>Photo Gallery - Galería Fotográfica</h3>
+    <div class="photo-gallery">
+      <img src="fotos/Casas LomaChia.jpg" alt="Casas Loma Chia">
+      <img src="fotos/72con72.jpg" alt="72con72">
+      <img src="fotos/aguanosoderecho.jpg" alt="Aguanoso derecho">
+      <img src="fotos/atardeceaguanoso.jpg" alt="Atardece cerro aguanoso">
+      <img src="fotos/atardececentro.jpg" alt="Atardecer hacia el centro">
+      <img src="fotos/atardecesancristo.jpg" alt="San Cristobal Montañas">
+      <img src="fotos/centroanciana.jpg" alt="Vista de señora y el centro">
+      <img src="fotos/centromonserrate.jpg" alt="Vista de Monserrate desde el centro">
+      <img src="fotos/cerrozipa.jpg" alt="Cerro cerca a Zipaquirá">
+      <img src="fotos/chusacajhonny.jpg" alt="Chusaca & Jhonny">
+      <img src="fotos/cielonaranja.jpg" alt="Atardecer bogotano">
+      <img src="fotos/guadaguanoso.jpg" alt="Guadalupe y pompa">
+      <img src="fotos/guadalupecerro.jpg" alt="Cerro de Guadalupe">
+      <img src="fotos/monserrate.jpg" alt="Vista de Monserrate">
+      <img src="fotos/Monserrateypersonas.jpg" alt="Monserrate desde la Av 1 de mayo">
+      <img src="fotos/sierramorena.jpg" alt="Vista de la Sierra Morena CB">
+    </div>
+  </section>
+
+  <section class="contacto-section">
+    <h2>Contact - Contacto</h2>
+    <p>Want to work with me or have any questions? Write to me directly or contact me through social media
+      ¿Quieres trabajar conmigo o tienes alguna duda? Escríbeme directamente o contáctame por redes:</p>
+
+    <form class="formulario-contacto" action="https://formspree.io/f/xwpbrror" method="POST">
+      <input type="text" name="name" placeholder="Tu nombre" required>
+      <input type="email" name="email" placeholder="Tu correo electrónico" required>
+      <textarea name="message" placeholder="Escribe tu mensaje..." required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+
+    <a href="https://wa.me/573185210188" target="_blank" class="boton-whatsapp">
+      📱 Write me on WhatsApp
+    </a>
+
+    <div class="redes-sociales">
+      <a href="https://www.instagram.com/lopxrisk/" target="_blank">Instagram</a>
+      <a href="https://www.facebook.com/cristianlooo/" target="_blank">Facebook</a>
+      <a href="https://www.youtube.com/@sonidosocultosink9438" target="_blank">YouTube</a>
+      <a href="https://www.linkedin.com/in/cristian-lópez-188bbb1ab/" target="_blank">LinkedIn</a>
+      <a href="https://www.flickr.com/photos/116687387@N08/" target="_blanck">Flirck</a>
+    </div>
+  </section>
+</body>
+</html>
